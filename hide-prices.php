@@ -1,0 +1,38 @@
+<?php
+/**
+ * Hide Prices for WooCommerce
+ *
+ * @package   WPGeeks\Plugin\HidePrices
+ * @author    WP Geeks <support@wpgeeks.com>
+ * @copyright 2020 WP Geeks
+ * @license   GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ * @wordpress-plugin
+ * Plugin Name: Hide Prices
+ * Plugin URI:  https://wpgeeks.com/product/hide-prices
+ * Description: Allows you to hide prices on a WooCommerce product and display a label or button instead.
+ * Version:     0.1
+ * Author:      WP Geeks
+ * Author URI:  https://wpgeeks.com
+ * Text Domain: hide-prices
+ *
+ * Copyright:   © 2020 WP Geeks
+ * License:     GPL-2.0+
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ * Fire up the engines! Main plugin file which is simply used for getting
+ * things started.
+ *
+ * @since 0.1
+ */
+
+namespace WPGeeks\Plugin\HidePrices;
+
+// Autoload classes.
+require_once 'includes/helpers/autoloader.php';
+
+// Load config.
+require_once 'includes/config/config.php';
+
+$bootstrap = Bootstrap::get_instance();
+$bootstrap->load();

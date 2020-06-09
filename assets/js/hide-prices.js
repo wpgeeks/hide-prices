@@ -1,31 +1,35 @@
 (function($) {
     $(document).ready(function() {
-        var replacePrice         = $('#wpgks_hp_replace_price'),
-            replacementType      = $('#wpgks_hp_replacement_type'),
-            replacementTypeField = $('.wpgks_hp_replacement_type_field'),
-            replacementTextField = $('.wpgks_hp_replacement_text_field'),
-            replacementUrlField  = $('.wpgks_hp_replacement_url_field');
+        var replacePrice         = '.wpgks_hp_replace_price_form_field',
+            replacementType      = '.wpgks_hp_replacement_type_form_field',
+            replacementTypeField = '.wpgks_hp_replacement_type_field',
+            replacementTextField = '.wpgks_hp_replacement_text_field',
+            replacementUrlField  = '.wpgks_hp_replacement_url_field';
 
-        replacePrice.on('change', function() {
+        $(document).on('change', replacePrice, function() {
+            var parentSel = $(this).closest('div');
+
             if (this.checked) {
-                replacementTypeField.show();
-                replacementTextField.show();
+                parentSel.find(replacementTypeField).show();
+                parentSel.find(replacementTextField).show();
 
-                if ( 'button' === replacementType.val() ) {
-                    replacementUrlField.show();
+                if ( 'button' === parentSel.find(replacementType).val() ) {
+                    parentSel.find(replacementUrlField).show();
                 }
             } else {
-                replacementTypeField.hide();
-                replacementTextField.hide();
-                replacementUrlField.hide();
+                parentSel.find(replacementTypeField).hide();
+                parentSel.find(replacementTextField).hide();
+                parentSel.find(replacementUrlField).hide();
             }
         });
 
-        replacementType.on('change', function() {
-            if ( 'button' === replacementType.val() ) {
-                replacementUrlField.show();
+        $(document).on('change', replacementType, function() {
+            var parentSel = $(this).closest('div');
+
+            if ( 'button' === parentSel.find(replacementType).val() ) {
+                parentSel.find(replacementUrlField).show();
             } else {
-                replacementUrlField.hide();
+                parentSel.find(replacementUrlField).hide();
             }
         });
     });

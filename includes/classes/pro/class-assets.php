@@ -17,11 +17,18 @@ namespace WPGeeks\Plugin\HidePrices\Pro;
 class Assets {
 
     /**
-     * Handle for enqueuing assets.
+     * Handle for enqueuing JS assets.
      * 
      * @since 0.1
      */
-    const ASSETS_HANDLE = 'wpgks-hide-price';
+    const JS_HANDLE = 'wpgks-hide-price';
+
+    /**
+     * Handle for enqueuing CSS assets.
+     * 
+     * @since 0.1
+     */
+    const CSS_HANDLE = 'wpgks-hide-price';
 
     /**
      * Hooks.
@@ -30,10 +37,11 @@ class Assets {
      */
     public function hooks() {
         add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
+        add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_styles' ], 9999 );
     }
 
     /**
-	 * Enqueue the required scripts.
+	 * Enqueue the required JS scripts.
 	 *
 	 * @since 0.1
 	 */
@@ -41,7 +49,20 @@ class Assets {
         $screen = get_current_screen();
 
 		if ( ! empty( $screen->post_type ) && 'product' === $screen->post_type ) {
-			wp_enqueue_script( self::ASSETS_HANDLE, HIDE_PRICES_URL . 'assets/js/hide-prices.js', [ 'jquery' ], '0.1' );
+			wp_enqueue_script( self::JS_HANDLE, HIDE_PRICES_URL . 'assets/js/hide-prices.js', [ 'jquery' ], '0.1' );
 		}
-	}
+    }
+    
+    /**
+	 * Enqueue the required CSS scripts.
+	 *
+	 * @since 0.1
+	 */
+    public function enqueue_styles() {
+        $screen = get_current_screen();
+
+		if ( ! empty( $screen->post_type ) && 'product' === $screen->post_type ) {
+			wp_enqueue_style( self::CSS_HANDLE, HIDE_PRICES_URL . 'assets/css/hide-prices.css', [], '0.1' );
+		}
+    }
 }

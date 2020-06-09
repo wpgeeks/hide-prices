@@ -400,7 +400,7 @@ class Hide_Prices {
      */
     public function remove_prices_from_variation_range( $prices, $product ) {
         if ( is_admin() ) {
-            return;
+            return $prices;
         }
 
         if ( ! empty( $prices['price'] ) && is_array( $prices['price'] ) ) {

@@ -8,7 +8,7 @@
  * @license   GPL-2.0+ http://www.gnu.org/licenses/gpl-2.0.txt
  *
  * @wordpress-plugin
- * Plugin Name: Hide Prices
+ * Plugin Name: Hide Prices for WooCommerce
  * Plugin URI:  https://wpgeeks.com/product/hide-prices
  * Description: Allows you to hide prices on a WooCommerce product and display a label or button instead.
  * Version:     0.1

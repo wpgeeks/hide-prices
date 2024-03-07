@@ -1,0 +1,25 @@
+{
+	"name": "wpgeeks/hide-prices",
+	"description": "Hide Prices for WooCommerce",
+	"type": "project",
+	"keywords": [],
+	"repositories": [
+	  {
+		"type": "composer",
+		"url": "https://wpackagist.org"
+	  }
+	],
+	"require-dev": {
+	  "squizlabs/php_codesniffer": "3.*",
+	  "wp-coding-standards/wpcs": "^3.0.1"
+	},
+	"scripts": {
+	  "clean": [
+		"vendor/bin/phpcbf . --standard=phpcs.xml"
+	  ],
+	  "lint": [
+		"vendor/bin/phpcs . --standard=phpcs.xml"
+	  ]
+	}
+  }
+  

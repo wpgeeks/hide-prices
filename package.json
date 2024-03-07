@@ -1,0 +1,24 @@
+{
+	"name": "@wpgeeks/hide-prices",
+	"description": "Hide Prices for WooCommerce",
+	"author": "WP Geeks",
+	"license": "GPL-2.0-or-later",
+	"devDependencies": {
+		"@wordpress/env": "8.9.0",
+		"@wordpress/scripts": "^26.16.0"
+	},
+	"scripts": {
+		"start": "wp-env start",
+		"stop": "wp-env stop",
+		"wp": "wp-env run cli",
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip"
+	},
+	"dependencies": {
+		"@wordpress/block-editor": "^12.13.0"
+	}
+}

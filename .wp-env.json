@@ -1,6 +1,7 @@
 {
 	"plugins": [
-		"."
+		".",
+		"https://downloads.wordpress.org/plugin/woocommerce.9.1.2.zip"
 	],
 	"config": {
 		"WP_DEBUG_DISPLAY": true

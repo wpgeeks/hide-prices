@@ -11,6 +11,8 @@
 	],
 	"require-dev": {
 	  "squizlabs/php_codesniffer": "3.*",
+	  "wp-cli/i18n-command": "2.6.2",
+	  "wp-cli/wp-cli-bundle": "2.10.0",
 	  "wp-coding-standards/wpcs": "^3.0.1"
 	},
 	"scripts": {
@@ -19,7 +21,14 @@
 	  ],
 	  "lint": [
 		"vendor/bin/phpcs . --standard=phpcs.xml"
+	  ],
+	  "make-pot": [
+		  "wp i18n make-pot . ./languages/hide-prices.pot --exclude=languages,node_modules,src,tests,vendor"
 	  ]
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
 	}
-  }
-  
+}

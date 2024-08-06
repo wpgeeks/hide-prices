@@ -2,7 +2,7 @@
 /**
  * Singleton trait to be used by classes.
  *
- * @since 0.1
+ * @since 1.0
  *
  * @package WPGeeks\Plugin\HidePrices
  */
@@ -12,7 +12,7 @@ namespace WPGeeks\Plugin\HidePrices\Traits;
 /**
  * Trait Singleton
  *
- * @since 0.1
+ * @since 1.0
  *
  * @codeCoverageIgnore
  *
@@ -23,7 +23,7 @@ trait Singleton {
 	/**
 	 * The object instance.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @var object|null Instance of object.
 	 */
@@ -34,7 +34,7 @@ trait Singleton {
 	 *
 	 * @codeCoverageIgnore
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 */
 	protected function __construct() {}
 
@@ -43,14 +43,14 @@ trait Singleton {
 	 *
 	 * @codeCoverageIgnore
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 */
 	final protected function __clone() {}
 
 	/**
 	 * Get an instance of the object.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @codeCoverageIgnore
 	 *
@@ -63,5 +63,4 @@ trait Singleton {
 
 		return self::$instance;
 	}
-
 }

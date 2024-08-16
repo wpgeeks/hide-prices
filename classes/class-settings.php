@@ -60,36 +60,35 @@ class Settings {
 	 *
 	 * @param bool $simple Display for simple product or variation (false).
 	 * @param int  $id The ID of the setting.
-	 * @param int  $index The index place of the setting.
 	 */
-	public function render_setting_fields( $simple = true, $id = null, $index = null ) {
+	public function render_setting_fields( $simple = true, $id = null ) {
 		if ( empty( $id ) ) {
 			$id = get_the_ID();
 		}
 
 		woocommerce_wp_checkbox(
 			array(
-				'id'                => self::HIDE_PRICE,
-				'name'              => self::HIDE_PRICE,
-				'value'             => get_post_meta( $id, self::HIDE_PRICE, true ),
-				'wrapper_class'     => 'options',
-				'class'             => sprintf( '%s_form_field', self::HIDE_PRICE ),
-				'label'             => __( 'Hide the price', 'hide-prices' ),
-				'desc_tip'          => $simple ? false : true,
-				'description'       => __( 'Enabling this option will hide the price from the product page', 'hide-prices' ),
+				'id'            => self::HIDE_PRICE,
+				'name'          => self::HIDE_PRICE,
+				'value'         => get_post_meta( $id, self::HIDE_PRICE, true ),
+				'wrapper_class' => 'options',
+				'class'         => sprintf( '%s_form_field', self::HIDE_PRICE ),
+				'label'         => __( 'Hide the price', 'hide-prices' ),
+				'desc_tip'      => $simple ? false : true,
+				'description'   => __( 'Enabling this option will hide the price from the product page', 'hide-prices' ),
 			)
 		);
 
 		woocommerce_wp_checkbox(
 			array(
-				'id'                => self::HIDE_ADD_TO_CART,
-				'name'              => self::HIDE_ADD_TO_CART,
-				'value'             => get_post_meta( $id, self::HIDE_ADD_TO_CART, true ),
-				'wrapper_class'     => 'options',
-				'class'             => sprintf( '%s_form_field', self::HIDE_ADD_TO_CART ),
-				'label'             => $simple ? __( 'Hide add to cart button', 'hide-prices' ) : __( 'Disable add to cart button', 'hide-prices' ),
-				'desc_tip'          => $simple ? false : true,
-				'description'       => $simple ?
+				'id'            => self::HIDE_ADD_TO_CART,
+				'name'          => self::HIDE_ADD_TO_CART,
+				'value'         => get_post_meta( $id, self::HIDE_ADD_TO_CART, true ),
+				'wrapper_class' => 'options',
+				'class'         => sprintf( '%s_form_field', self::HIDE_ADD_TO_CART ),
+				'label'         => $simple ? __( 'Hide add to cart button', 'hide-prices' ) : __( 'Disable add to cart button', 'hide-prices' ),
+				'desc_tip'      => $simple ? false : true,
+				'description'   => $simple ?
 					__( 'Enabling this option will hide the add to cart button from the product page', 'hide-prices' ) :
 					__( 'Enabling this option will disable the add to cart button on the product page', 'hide-prices' ),
 			)

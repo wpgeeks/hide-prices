@@ -1,5 +1,5 @@
 === Hide Prices for WooCommerce ===
-Contributors: WPGeeks, MattGeri
+Contributors: wearewpgeeks, MattGeri
 Tags: woocommerce, pricing, hide, hide prices, hide cart
 Requires at least: 5.0
 Tested up to: 6.6

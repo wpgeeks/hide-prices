@@ -15,6 +15,12 @@
  * Author:      WP Geeks
  * Author URI:  https://wpgeeks.com
  * Text Domain: hide-prices
+ * Domain Path: /languages
+ *
+ * Requires Plugins: woocommerce
+ *
+ * WC requires at least: 5.7.0
+ * WC tested up to: 9.2.3
  *
  * Copyright:   © 2024 WP Geeks
  * License:     GPL-2.0+
